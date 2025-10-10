@@ -1,0 +1,165 @@
+import React from "react";
+import "./services.css"; // separate CSS file
+import sunny from "../assets/sunny.jpg";
+import rain from "../assets/rainy.jpg";
+import clouds from "../assets/cloudy.jpg";
+import storm from "../assets/storm.jpg";
+import wind from "../assets/wind.jpg";
+
+function Services() {
+  return (
+    <div className="services-page">
+      {/* ===== Page Header ===== */}
+      <section className="services-header">
+        <h1>Our Weather Services</h1>
+        <p>
+          Explore a range of weather solutions designed to keep you informed and prepared for every condition — anywhere, anytime.
+        </p>
+      </section>
+
+      {/* ===== Services Cards ===== */}
+      <section className="service-section">
+        <div className="service-cards">
+          <div className="service-card">
+            <img src={sunny} alt="Sunny Weather" />
+            <h3>Sunny Conditions</h3>
+            <p>
+              Get real-time UV index, temperature, and heatwave alerts for bright, sunny days.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <img src={rain} alt="Rainy Weather" />
+            <h3>Rain Forecast</h3>
+            <p>
+              Stay prepared with rainfall predictions, humidity data, and real-time precipitation updates.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <img src={clouds} alt="Cloudy Weather" />
+            <h3>Cloud Coverage</h3>
+            <p>
+              Monitor sky conditions, visibility, and cloud density for overcast and partly cloudy days.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <img src={storm} alt="Storm Alerts" />
+            <h3>Storm Alerts</h3>
+            <p>
+              Receive instant notifications for thunderstorms, heavy winds, and extreme weather conditions.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <img src={wind} alt="Wind Updates" />
+            <h3>Wind Patterns</h3>
+            <p>
+              Track wind direction, speed, and gusts to plan your outdoor and travel activities better.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default Services;
+
+<!-- 
+now css -->
+
+/* ===== Services Page ===== */
+
+.services-page {
+    font-family: "Poppins", sans-serif;
+    background-color: #f9fafb;
+    color: #111827;
+    min-height: 100vh;
+    padding-bottom: 3rem;
+  }
+  
+  /* Header Section */
+  .services-header {
+    text-align: center;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    padding: 4rem 1rem 3rem;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .services-header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .services-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+  
+  /* Service Cards */
+  .service-section {
+    margin-top: 3rem;
+    padding: 0 5%;
+  }
+  
+  .service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+  
+  .service-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    max-width: 340px;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .service-card h3 {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #1e3a8a;
+  }
+  
+  .service-card p {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0.8rem 1rem 1.5rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .services-header h1 {
+      font-size: 2rem;
+    }
+  
+    .service-card img {
+      height: 180px;
+    }
+  }
+  
