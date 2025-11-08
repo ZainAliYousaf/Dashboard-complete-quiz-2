@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Here is our Smart Weather App.
 1. Dashboard will not show until u sign up or sign in.
 2. There are Seven pages: Home, About, Services, Contact, Registration, Login and Dashboard(only shows when are u logged in).
@@ -21,3 +22,7 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+=======
+# Front--End-React-Assignment-1-Quiz-1
+Smart Weather App 3
+>>>>>>> 67e43e69a64e7068878d42aa3d3e4800ba5eb23c
