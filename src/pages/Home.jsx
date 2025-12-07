@@ -11,6 +11,7 @@ import "../styles/home.css";
 
 function Home() {
   const navigate = useNavigate();
+  
   const [city, setCity] = useState("");
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -60,12 +61,21 @@ function Home() {
   };
 
 
-  const handleSearch = async () => {
+  const handleSearch = () => {
+    const user = localStorage.getItem("user");
+  
+    // ✅ If NOT logged in → redirect to login
+    if (!user) {
+      navigate("/login");
+      return;
+    }
+  
+    // ✅ If logged in → proceed
     if (!city.trim()) return;
-
-    // Navigate to WeatherDetails page with city name
+  
     navigate(`/weather/${city}`);
   };
+  
 
 
   const handleKeyDown = (e) => {
@@ -445,67 +455,74 @@ function Home() {
         </div>
       </section>
 
-      {/* ===== Future API Section with Premium Design ===== */}
-      <section className="future-api fade-in-up">
-        <div className="api-container">
-          <div className="api-content">
-            <div className="api-badge glass">
-              <span className="pulse-dot"></span>
-              <span>Coming Soon</span>
-            </div>
 
-            <h2 className="api-title">
-              Next-Generation <span className="gradient-text">Weather API</span>
+      {/* ===== Weather Safety & Tips (Enhanced Premium Version) ===== */}
+      <section className="safety-section fade-in-up">
+        {/* Background Animated Particles */}
+        <div className="particles">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div className="safety-container">
+
+          {/* Header */}
+          <div className="safety-header">
+            <span className="safety-badge glass">
+              <span className="pulse-dot"></span>
+              Weather Safety
+            </span>
+
+            <h2 className="safety-title">
+              Stay Safe With <span className="gradient-text">Smart Weather Guidance</span>
             </h2>
 
-            <p className="api-description">
-              Get ready for our revolutionary weather API with machine learning predictions,
-              climate change analytics, and satellite imagery integration.
+            <p className="safety-desc">
+              Modern tips designed to keep you prepared during extreme weather conditions,
+              displayed in a clean and futuristic layout.
             </p>
-
-            <div className="api-features">
-              <div className="api-feature-item">
-                <span className="check-icon">✓</span>
-                <span>15-Day Advanced Forecasts</span>
-              </div>
-              <div className="api-feature-item">
-                <span className="check-icon">✓</span>
-                <span>Severe Weather Alerts</span>
-              </div>
-              <div className="api-feature-item">
-                <span className="check-icon">✓</span>
-                <span>Historical Data Analysis</span>
-              </div>
-            </div>
-
-            <button className="api-btn-premium glass">
-              <span>Join Waitlist</span>
-              <div className="btn-shimmer"></div>
-            </button>
           </div>
 
-          <div className="api-visual">
-            <div className="api-mockup glass">
-              <div className="mockup-header">
-                <div className="mockup-dots">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-              <div className="mockup-content">
-                <div className="code-line"><span className="code-key">GET</span> /api/weather/forecast</div>
-                <div className="code-line"><span className="code-key">Response:</span> 200 OK</div>
-                <div className="code-line">{"{"}</div>
-                <div className="code-line indent">"temperature": <span className="code-value">28°C</span>,</div>
-                <div className="code-line indent">"conditions": <span className="code-value">"sunny"</span>,</div>
-                <div className="code-line indent">"accuracy": <span className="code-value">99.9%</span></div>
-                <div className="code-line">{"}"}</div>
-              </div>
+          {/* Cards */}
+          <div className="safety-cards">
+
+            {/* Heatwave */}
+            <div className="safety-card glass glow">
+              <div className="card-icon animated">🔥</div>
+              <h3>Heatwave Protection</h3>
+              <p>
+                Drink water, avoid heat exposure, and stay in cool shaded environments.
+              </p>
             </div>
+
+            {/* Rain */}
+            <div className="safety-card glass glow">
+              <div className="card-icon animated">🌧️</div>
+              <h3>Heavy Rain Safety</h3>
+              <p>
+                Avoid flooded areas, keep emergency items ready, and follow alerts closely.
+              </p>
+            </div>
+
+            {/* Cold */}
+            <div className="safety-card glass glow">
+              <div className="card-icon animated">❄️</div>
+              <h3>Cold Weather Tips</h3>
+              <p>
+                Wear layers, protect extremities, and limit outdoor time during freezing conditions.
+              </p>
+            </div>
+
           </div>
+
         </div>
       </section>
+
+
+
     </>
   );
 }
